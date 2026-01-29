@@ -1,0 +1,16 @@
+/* Chrome, Safari, Edge, Opera (WebKit browsers) */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Standard property for modern browsers (currently not fully standardized across all browsers for this specific element) */
+input[type=number] {
+  appearance: textfield;
+}
