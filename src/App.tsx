@@ -61,7 +61,7 @@ function App() {
 
   async function setFormDate(){
     const today = new Date();
-    today.setDate(today.getDate() - 1);
+    today.setDate(today.getDate() - 2);
     const dateString = today.toISOString().split("T")[0];
 
     setConversionDate(dateString);
@@ -212,10 +212,11 @@ function App() {
         </form>
       </section>
 
-      <section className="container message-container">
+      {/* Real time messages as response to the user (error, success and others) */}
+      {/* <section className="container message-container">
         <h3>Currency Converter</h3>
         <span>Value Converted.</span>
-      </section>
+      </section> */}
     </>
   );
 }

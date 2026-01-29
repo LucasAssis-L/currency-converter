@@ -11,7 +11,6 @@ class CurrencyApiBaseService {
     this.client = new CurrencyAPI(apiKey);
   }
 
-  // Singleton pattern to ensure single instance
   public static getInstance(apiKey: string): CurrencyApiBaseService {
     if (!CurrencyApiBaseService.instance) {
       CurrencyApiBaseService.instance = new CurrencyApiBaseService(apiKey);
@@ -19,7 +18,6 @@ class CurrencyApiBaseService {
     return CurrencyApiBaseService.instance;
   }
 
-  /* Fetch all available currencies */
   async getCurrencies(codes?: string[]): Promise<CurrenciesResponseModel> {
     try {
       const response = await this.client.currencies(
@@ -33,7 +31,6 @@ class CurrencyApiBaseService {
     }
   }
 
-  /* Get latest exchange rates */
   async getLatestRates(
     baseCurrency: string = 'USD',
     targetCurrencies?: string[]
@@ -51,7 +48,6 @@ class CurrencyApiBaseService {
     }
   }
 
-  /* Convert amount from one currency to another */
   async convertCurrency(
     amount: number,
     fromCurrency: string,

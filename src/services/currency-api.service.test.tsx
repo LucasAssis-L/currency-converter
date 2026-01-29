@@ -1,4 +1,6 @@
 /// <reference types="node" />
+/// <reference types="@testing-library/jest-dom" />
+
 import CurrencyApiService from "./currency-api.service";
 
 jest.mock('@everapi/currencyapi-js');

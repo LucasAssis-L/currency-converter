@@ -8,10 +8,14 @@ export const formatNumber = (
   }).format(value);
 };
 
+export const formatCurrency = (value: number): string => {
+  return new Intl.NumberFormat('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value);
+};
+
 export const parseNumber = (value: string): number => {
-  return Number(
-    value
-      .replace(/\./g, "")
-      .replace(",", ".")
-  );
+  const normalized = value.replace(/\./g, '').replace(',', '.');
+  return parseFloat(normalized) || 0;
 };
